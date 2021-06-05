@@ -1,6 +1,18 @@
+import {useHistory} from 'react-router-dom'
 
 
 const carrinho = () => {
+    const history = useHistory()
+    const goPagFeed = () => {
+        history.push ("/Feed")
+    }
+    const goPagCarrinho = () => {
+        history.push ("/Carrinho")
+    }
+    const goPagPerfil = () => {
+        history.push ("/Perfil")
+    }
+    
     return (
         <div className="carrinho">
             <header>
@@ -29,11 +41,17 @@ const carrinho = () => {
             </main>
 
             <footer>
-            <button type="submit"> Confirmar </button>
+                <button type="submit"> Confirmar </button>
 
-            <img src={} alt="home"/>
-            <img src={} alt="carrinho"/>
-            <img src={} alt="minha conta"/>
+                <button onClick={goPagFeed}>
+                    <img src={} alt="home"/>
+                </button> 
+                <button onClick={goPagCarrinho}>
+                    <img src={} alt="carrinho"/>
+                </button>               
+                <button onClick={goPagPerfil}>
+                    <img src={} alt="minha conta"/>
+                </button>
             </footer>
         </div>
     )

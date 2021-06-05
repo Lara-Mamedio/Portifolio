@@ -1,10 +1,18 @@
+import {useHistory} from 'react-router-dom'
 
 
 const restaurante = () => {
+    const history = useHistory()
+    const goBack = () => {
+        history.goBack()
+    }
+    
     return (
         <div className="resturante">
             <header>
-                <img src={} alt="voltar"/>
+                <button onClick={goBack}>
+                    <img src={} alt="voltar"/>
+                </button>
 
                 <h3> Restaurante </h3>
             </header>

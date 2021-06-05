@@ -1,10 +1,18 @@
+import {useHistory} from 'react-router-dom'
 
 
 const editar = () => {
+    const history = useHistory()
+    const goBack = () => {
+        history.goBack()
+    }
+    
     return (
         <div className="editar">
             <header>
-                <img src={} alt="voltar"/>
+                <button onClick={goBack}>
+                    <img src={} alt="voltar"/>
+                </button>
 
                 <h3> Editar </h3>
             </header>

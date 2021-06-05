@@ -1,10 +1,22 @@
+import {useHistory} from 'react-router-dom'
 
 
 const busca = () => {
+    const history = useHistory()
+    const goPagRestaurante = () => {
+        history.push ("/Rstaurante")
+    }
+    const goBack = () => {
+        history.goBack()
+    }
+
+
     return (
         <div className="busca">
             <header>
-                <img src={} alt=""/>
+                <button onClick={goBack}>
+                    <img src={} alt="voltar"/>
+                </button>
 
                 <h3> Busca </h3>
 
@@ -24,11 +36,13 @@ const busca = () => {
 
 //deve aparecer quando o input foi usado é há um resultado
 <article>
-    <img src="" alt="comida"/>
-    
-    <h3> *nome do restaurante* </h3>
-    <h3> *tempo de entrega* </h3>
-    <h3> *frete* </h3>
+    <button onClick={goPagRestaurante}>
+        <img src="" alt="comida"/>
+        
+        <h3> *nome do restaurante* </h3>
+        <h3> *tempo de entrega* </h3>
+        <h3> *frete* </h3>
+    </button>
 </article>
 
     //quando nada é encontrado, após a busca

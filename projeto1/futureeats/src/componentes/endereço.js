@@ -1,10 +1,21 @@
+import {useHistory} from 'react-router-dom'
 
 
 const endereço = () => {
+    const history = useHistory()
+    const goPagFeed = () => {
+        history.push ("/Feed")
+    }
+    const goBack = () => {
+        history.goBack()
+    }
+    
     return (
         <div className="endereço">
             <header className="cadastro">
-                <img src={} alt="voltar"/>
+                <button onClick={goBack}>
+                    <img src={} alt="voltar"/>
+                </button>
             </header>
 
             <main>
@@ -28,7 +39,7 @@ const endereço = () => {
                 <label for="estado"> Estado* </label>
                 <input type="text" name="estado" id="estado"/>
 
-                <button type="submit"> Salvar </button>
+                <button onClick={goPagFeed}> Salvar </button>
             </main>
         </div>
     )

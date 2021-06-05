@@ -1,6 +1,9 @@
+import {useHistory} from 'react-router-dom'
 
 
 const pedidoConfirmado = () => {
+    const history = useHistory()
+    
     return (
         <div className="pedidoConfirmado">
             <article>
