@@ -1,6 +1,15 @@
+import {useHistory} from 'react-router-dom'
 
 
 const login = () => {
+    const history = useHistory()
+    const goPagFeed = () => {
+        history.push ("/Feed")
+    }
+    const goPagCadastro = () => {
+        history.push ("/Cadastro")
+    }
+    
     return (
         <div className="login">
             <header className="headerLogin">
@@ -16,9 +25,9 @@ const login = () => {
                 <label for="senha"> Senha* </label>
                 <input type="password" name="senha" id="senha"/>
 
-                <button type="submit"> Entrar </button>
+                <button onClick={goPagFeed}> Entrar </button>
 
-                <a href=""> Não possui cadastro? Clique aqui. </a>
+                <button onClick={goPagCadastro}> Não possui cadastro? Clique aqui. </button>
 
             </main>
 

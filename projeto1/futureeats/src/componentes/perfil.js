@@ -1,6 +1,24 @@
+import {useHistory} from 'react-router-dom'
 
 
 const perfil = () => {
+    const history = useHistory()
+    const goPagEditar = () => {
+        history.push ("/Editar")
+    }
+    const goPagEndereço = () => {
+        history.push ("/Endereço")
+    }
+    const goPagFeed = () => {
+        history.push ("/Feed")
+    }
+    const goPagCarrinho = () => {
+        history.push ("/Carrinho")
+    }
+    const goPagPerfil = () => {
+        history.push ("/Perfil")
+    }
+    
     return (
         <div className="perfil">
             <header>
@@ -14,14 +32,18 @@ const perfil = () => {
                         <h3> *e-mail* </h3>
                         <h3> *telefone* </h3>
 
-                        <img src={} alt="lápis"/>
+                        <button onClick={goPagEditar}>
+                            <img src={} alt="lápis"/>
+                        </button>
                     </div>
 
                     <div>
                         <h3> Endereço cadastrado </h3>
                         <h3> *endereço* </h3>
 
-                        <img src={} alt="lápis"/>
+                        <button onClick={goPagEndereço}>
+                            <img src={} alt="lápis"/>
+                        </button>
                     </div>
                 </article>
 
@@ -30,9 +52,15 @@ const perfil = () => {
             </main>
 
             <footer>
-                <img src={} alt="home"/>
-                <img src={} alt="carrinho"/>
-                <img src={} alt="minha conta"/>
+                <button onClick={goPagFeed}>
+                    <img src={} alt="home"/>
+                </button> 
+                <button onClick={goPagCarrinho}>
+                    <img src={} alt="carrinho"/>
+                </button>               
+                <button onClick={goPagPerfil}>
+                    <img src={} alt="minha conta"/>
+                </button>
             </footer>
         </div>
     )

@@ -1,14 +1,26 @@
+import {useHistory} from 'react-router-dom'
 
 
 const cadastro = () => {
+    const history = useHistory()
+    const goPagEndereço = () => {
+        history.push ("/Endereço")
+    }
+    const goBack = () => {
+        history.goBack()
+    }
+
     return (
         <div className="cadastro">
             <header className="headerCadastro">
-                <img src={} alt="voltar"/>
-                <img src={} alt="logo"/>
+                <button onClick={goBack}>
+                    <img src={} alt="voltar"/>
+                </button>
             </header>
 
             <main>
+                <img src={} alt="logo"/>
+
                 <h3> Cadastrar </h3>
 
                 <label for="nome"> Nome* </label>
@@ -26,7 +38,7 @@ const cadastro = () => {
                 <label for="senha"> Confirmar* </label>
                 <input type="password" name="senha" id="senha"/>
 
-                <button type="submit"> Criar </button>
+                <button onClick={goPagEndereço}> Criar </button>
             </main>
         </div>
     )

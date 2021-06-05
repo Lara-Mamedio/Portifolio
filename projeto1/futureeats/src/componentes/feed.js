@@ -1,6 +1,21 @@
+import {useHistory} from 'react-router-dom'
 
 
 const feed = () => {
+    const history = useHistory()
+    const goPagRestaurante = () => {
+        history.push ("/Rstaurante")
+    }
+    const goPagFeed = () => {
+        history.push ("/Feed")
+    }
+    const goPagCarrinho = () => {
+        history.push ("/Carrinho")
+    }
+    const goPagPerfil = () => {
+        history.push ("/Perfil")
+    }
+    
     return (
         <div className="feed">
             <header>
@@ -16,19 +31,27 @@ const feed = () => {
 
             <main>
                 <article>
-                    <img src="" alt="comida"/>
-                    
-                    <h3> *nome do restaurante* </h3>
-                    <h3> *tempo de entrega* </h3>
-                    <h3> *frete* </h3>
+                    <button onClick={goPagRestaurante}>
+                        <img src="" alt="comida"/>
+                        
+                        <h3> *nome do restaurante* </h3>
+                        <h3> *tempo de entrega* </h3>
+                        <h3> *frete* </h3>
+                    </button>
                 </article>
 
             </main>
 
             <footer>
-                <img src={} alt="home"/>
-                <img src={} alt="carrinho"/>
-                <img src={} alt="minha conta"/>
+                <button onClick={goPagFeed}>
+                    <img src={} alt="home"/>
+                </button> 
+                <button onClick={goPagCarrinho}>
+                    <img src={} alt="carrinho"/>
+                </button>               
+                <button onClick={goPagPerfil}>
+                    <img src={} alt="minha conta"/>
+                </button>
             </footer>
         </div>
     )
